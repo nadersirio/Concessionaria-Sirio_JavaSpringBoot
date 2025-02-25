@@ -26,9 +26,13 @@ public class Cliente {
     private Long id;
     private String nome;
     private String email;
+    private String cpf;
+    private String rg;
+    private String telefone;
+    private String complemento;
 
     @Enumerated(EnumType.STRING)
-    private TipoCarteira TipoCarteira;
+    private tipoHab tipoHab;
 
     @Embedded
     private Endereco endereco;
@@ -36,7 +40,11 @@ public class Cliente {
     public Cliente(DadosCadastroCliente dados){
       this.nome = dados.nome();
       this.email = dados.email();
-      this.TipoCarteira = dados.TipoCarteira();
+      this.cpf = dados.cpf();
+      this.rg = dados.rg();
+      this.telefone = dados.telefone();
+      this.tipoHab = dados.tipoHab();
+      this.complemento = dados.complemento();
       this.endereco = new Endereco(dados.endereco());   
     }
 }
