@@ -15,7 +15,6 @@ public class Endereco {
         private String bairro;
         private String cep;
         private String numero;
-        private String complemento;
         private String cidade;
         private String uf;
 
@@ -26,6 +25,5 @@ public class Endereco {
                 this.uf = dados.uf();
                 this.cidade = dados.cidade();
                 this.numero = dados.numero();
-                this.complemento = dados.complemento();
        }
 }

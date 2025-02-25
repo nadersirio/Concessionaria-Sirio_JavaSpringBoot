@@ -1,6 +1,6 @@
 package Concessionaria_Sirio.api.Cliente;
 
-public enum TipoCarteira {
+public enum tipoHab {
     A,
     B,
     AB,
