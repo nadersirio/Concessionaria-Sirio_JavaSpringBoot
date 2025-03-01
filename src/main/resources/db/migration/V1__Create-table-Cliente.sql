@@ -1,15 +1,13 @@
-create table Cliente(
-
-    id bigint not null auto_increment,
-    nome varchar(50) not null,
-    email varchar(50) not null unique,
-    cpf varchar(11) not null unique,
-    rg varchar(10) not null unique,
-    telefone varchar(11) not null,
-    tipoHab varchar(2) not null unique,
-    endereco integer,
-    complemento varchar(100) not null,
-
-    primary key(id)
-    foreign key(endereco) references Endereco(id)
+CREATE TABLE Cliente (
+    id BIGINT NOT NULL AUTO_INCREMENT,
+    nome VARCHAR(50) NOT NULL,
+    email VARCHAR(50) NOT NULL UNIQUE,
+    cpf VARCHAR(14) NOT NULL UNIQUE,
+    rg VARCHAR(10) NOT NULL UNIQUE,
+    telefone VARCHAR(15) NOT NULL,
+    tipoHab VARCHAR(2) NOT NULL,
+    endereco INT,
+    complemento VARCHAR(100) NOT NULL,
+    PRIMARY KEY (id),
+    FOREIGN KEY (endereco) REFERENCES Endereco(id)
 );
