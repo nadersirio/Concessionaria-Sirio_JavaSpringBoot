@@ -9,6 +9,6 @@ create table CarrosCliente(
     ultimaRevisao3 date not null,
     
     primary key(id),
-    foreign key(carro) references Carro(id),
-    foreign key(cliente) references Cliente(id)
+    CONSTRAINT fk_cliente FOREIGN KEY (cliente) REFERENCES cliente(id),
+    CONSTRAINT fk_carro FOREIGN KEY (carro) REFERENCES carro(id)
 );
