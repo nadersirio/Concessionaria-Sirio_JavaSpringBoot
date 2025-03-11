@@ -11,7 +11,7 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-@Table(name = "Carro")
+@Table(name = "carro")
 @Entity(name = "Carro")
 @Getter
 @NoArgsConstructor
