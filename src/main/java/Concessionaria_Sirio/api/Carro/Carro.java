@@ -1,7 +1,6 @@
 package Concessionaria_Sirio.api.Carro;
 
-import java.math.BigDecimal;
-
+import java.sql.Date;
 import Concessionaria_Sirio.api.Marca.Marca;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -28,7 +27,9 @@ public class Carro {
   private Long id;
   private String modelo;
   private String ano;
-  private BigDecimal tabelaFipe;
+  private Double tabelaFipe;
+  private String placa;
+  private Date revisoes;
 
   @ManyToOne
   @JoinColumn(name = "marca", referencedColumnName = "id")
@@ -38,10 +39,11 @@ public class Carro {
     this.modelo = dados.modelo();
     this.ano = dados.ano();
     this.tabelaFipe = dados.TabelaFIPE();
+    this.placa = dados.placa();
+    this.revisoes = dados.revisoes();
   }
 
-  public void setMarca(Marca marca) {
-    this.marca = marca;
+  public void setMarca(Marca marcasalva) {
+    this.marca = marcasalva;
   }
-
 }
