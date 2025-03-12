@@ -48,7 +48,6 @@ public class Cliente {
         this.telefone = dados.telefone();
         this.tipoHab = dados.tipoHab();
         this.complemento = dados.complemento();
-        this.endereco = null;
     }
 
     public void setEndereco(Endereco enderecoSalvo) {
