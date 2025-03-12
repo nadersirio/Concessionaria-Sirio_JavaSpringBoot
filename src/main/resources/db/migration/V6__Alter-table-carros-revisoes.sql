@@ -1,0 +1,1 @@
+alter table carro ADD ultimaRevisao date;
