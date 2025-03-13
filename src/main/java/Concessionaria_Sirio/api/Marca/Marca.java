@@ -22,8 +22,8 @@ public class Marca {
   private Long id;
   private String nome;
 
-  public Marca(DadosMarca dados) {
-    this.nome = dados.nome();
+  public Marca(String nome) {
+    this.nome = nome;
   }
 
 }

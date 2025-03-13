@@ -3,7 +3,6 @@ package Concessionaria_Sirio.api.controler;
 import Concessionaria_Sirio.api.Carro.Carro;
 import Concessionaria_Sirio.api.Carro.CarroRepository;
 import Concessionaria_Sirio.api.Carro.DadosCadastroCarro;
-import Concessionaria_Sirio.api.Marca.DadosMarca;
 import Concessionaria_Sirio.api.Marca.Marca;
 import Concessionaria_Sirio.api.Marca.MarcaRepository;
 import jakarta.transaction.Transactional;
@@ -28,8 +27,8 @@ public class CadastroCarro {
     @Transactional
     public void Cadastro(@RequestBody DadosCadastroCarro dados) {
 
-        DadosMarca dadosMarca = dados.marca();
-        Marca marcasalva = marcaRepository.save(new Marca(dadosMarca));
+        Marca marca = new Marca(dados.marca());
+        Marca marcasalva = marcaRepository.save(marca);
 
         Carro carro = new Carro(dados);
         carro.setMarca(marcasalva);
