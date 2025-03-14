@@ -22,7 +22,7 @@ public record DadosCadastroCarro(
   Double TabelaFIPE,
   
   @NotBlank
-  @Pattern(regexp = "[A-Z]{3}-[0-9]{4}")
+  @Pattern(regexp = "[A-Z]{3}[0-9]{4}")
   String placa, 
 
   @NotNull
