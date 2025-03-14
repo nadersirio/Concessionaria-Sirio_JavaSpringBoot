@@ -6,6 +6,7 @@ import Concessionaria_Sirio.api.Carro.DadosCadastroCarro;
 import Concessionaria_Sirio.api.Marca.Marca;
 import Concessionaria_Sirio.api.Marca.MarcaRepository;
 import jakarta.transaction.Transactional;
+import jakarta.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -25,7 +26,7 @@ public class CadastroCarro {
 
     @PostMapping
     @Transactional
-    public void Cadastro(@RequestBody DadosCadastroCarro dados) {
+    public void Cadastro(@RequestBody @Valid DadosCadastroCarro dados) {
 
         Marca marca = new Marca(dados.marca());
         Marca marcasalva = marcaRepository.save(marca);
