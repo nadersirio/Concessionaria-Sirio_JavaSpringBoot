@@ -6,6 +6,7 @@ import Concessionaria_Sirio.api.Cliente.DadosCadastroCliente;
 import Concessionaria_Sirio.api.Endereco.DadosEndereco;
 import Concessionaria_Sirio.api.Endereco.Endereco;
 import Concessionaria_Sirio.api.Endereco.EnderecoRepository;
+import jakarta.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -26,7 +27,7 @@ public class CadastroCliente {
 
     @PostMapping
     @Transactional
-    public void Cadastrar(@RequestBody DadosCadastroCliente dados) {
+    public void Cadastrar(@RequestBody @Valid DadosCadastroCliente dados) {
         
         DadosEndereco dadosEndereco = dados.endereco();
         Endereco endereco = new Endereco(dadosEndereco);
