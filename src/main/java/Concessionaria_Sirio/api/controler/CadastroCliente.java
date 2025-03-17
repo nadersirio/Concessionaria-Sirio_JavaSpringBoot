@@ -28,7 +28,6 @@ public class CadastroCliente {
     @PostMapping
     @Transactional
     public void Cadastrar(@RequestBody @Valid DadosCadastroCliente dados) {
-        
         DadosEndereco dadosEndereco = dados.endereco();
         Endereco endereco = new Endereco(dadosEndereco);
 
@@ -37,6 +36,5 @@ public class CadastroCliente {
         Cliente cliente = new Cliente(dados);
         cliente.setEndereco(enderecoSalvo);
         repositoryCliente.save(cliente);
-    
-    }  
+    }
 }

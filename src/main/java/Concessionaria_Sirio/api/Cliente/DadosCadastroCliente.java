@@ -26,14 +26,14 @@ public record DadosCadastroCliente(
 
   @NotNull
   String telefone,
-  
-  @NotBlank
+
+  @NotNull
   TipoHab tipoHab,
-  
+
   @NotNull
   @Valid
   DadosEndereco endereco,
-   
+
   String complemento) {
 
 }
