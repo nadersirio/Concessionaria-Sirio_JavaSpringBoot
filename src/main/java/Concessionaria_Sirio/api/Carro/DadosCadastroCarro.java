@@ -7,23 +7,23 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
 
 public record DadosCadastroCarro(
-  
+
   @NotBlank
   String marca,
-  
+
   @NotBlank
   String modelo,
-  
+
   @NotBlank
   @Pattern(regexp = "[0-9]{4}")
-  String ano, 
+  String ano,
 
   @NotNull
   Double TabelaFIPE,
-  
+
   @NotBlank
   @Pattern(regexp = "[A-Z]{3}[0-9]{4}")
-  String placa, 
+  String placa,
 
   @NotNull
   Date revisoes) {
